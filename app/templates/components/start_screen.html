@@ -1,25 +1,45 @@
 <div id="game-container">
-<div class="flex flex-col items-center justify-center min-h-full p-6 bg-gray-50">
-    <div class="text-center max-w-sm">
-        <h1 class="text-4xl font-bold text-gray-900 mb-2">Soc Ops</h1>
-        <p class="text-lg text-gray-600 mb-8">Social Bingo</p>
+<div class="flex flex-col items-center justify-center min-h-full p-6 landing-container">
+    <div class="landing-content max-w-2xl w-full">
+        <!-- Hero Section -->
+        <section class="landing-hero">
+            <h1 class="landing-title animate-title-enter">Soc Ops</h1>
+            <p class="landing-subtitle animate-subtitle-enter">Social Bingo</p>
+        </section>
 
-        <div class="bg-white rounded-lg p-6 shadow-sm border border-gray-200 mb-8">
-            <h2 class="font-semibold text-gray-800 mb-3">How to play</h2>
-            <ul class="text-left text-gray-600 text-sm space-y-2">
-                <li>• Find people who match the questions</li>
-                <li>• Tap a square when you find a match</li>
-                <li>• Get 5 in a row to win!</li>
-            </ul>
-        </div>
+        <!-- Benefits Section -->
+        <section class="benefit-cards">
+            <div class="benefit-card animate-card-enter animate-card-1">
+                <span class="benefit-emoji">👥</span>
+                <h3>Meet New People</h3>
+                <p>Find others who match the questions in just minutes</p>
+            </div>
+            <div class="benefit-card animate-card-enter animate-card-2">
+                <span class="benefit-emoji">🎯</span>
+                <h3>5 in a Row</h3>
+                <p>Mark matches to complete horizontal, vertical, or diagonal lines</p>
+            </div>
+            <div class="benefit-card animate-card-enter animate-card-3">
+                <span class="benefit-emoji">🏆</span>
+                <h3>See the Winners</h3>
+                <p>Watch the board light up as players achieve victory</p>
+            </div>
+        </section>
 
-        <button
-            hx-post="/start"
-            hx-target="#game-container"
-            hx-swap="outerHTML"
-            class="w-full bg-accent text-white font-semibold py-4 px-8 rounded-lg text-lg active:bg-accent-light transition-colors">
-            Start Game
-        </button>
+        <!-- CTA Section -->
+        <section class="landing-cta">
+            <p class="landing-tagline">Ready to break the ice?</p>
+            <div class="landing-button-section">
+                <button
+                    hx-post="/start"
+                    hx-target="#game-container"
+                    hx-swap="outerHTML"
+                    class="landing-button animate-button-enter">
+                    Start Game
+                </button>
+                <div class="landing-social-proof">🎮 100+ players have won bingo!</div>
+            </div>
+        </section>
     </div>
 </div>
 </div>

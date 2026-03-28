@@ -8,6 +8,19 @@ body,
 body {
     font-family: system-ui, -apple-system, sans-serif;
     -webkit-tap-highlight-color: transparent;
+    background-color: #0a0e27;
+    color: #e0e0e0;
+    letter-spacing: 0.05em;
+}
+
+/* Cyberpunk Neon Color Variables */
+:root {
+    --neon-cyan: #00d9ff;
+    --neon-magenta: #ff0080;
+    --neon-lime: #39ff14;
+    --neon-dark-bg: #0a0e27;
+    --neon-text: #e0e0e0;
+    --neon-text-dark: #1a1a2e;
 }
 
 /* Tailwind-like utility classes */
@@ -50,26 +63,28 @@ body {
 .mb-8 { margin-bottom: 2rem; }
 .mx-auto { margin-left: auto; margin-right: auto; }
 
-.bg-white { background-color: #ffffff; }
-.bg-gray-50 { background-color: #f9fafb; }
-.bg-gray-100 { background-color: #f3f4f6; }
-.bg-amber-100 { background-color: #fef3c7; }
-.bg-amber-200 { background-color: #fde68a; }
-.bg-accent { background-color: #2563eb; }
-.bg-marked { background-color: #dcfce7; }
-.bg-black\/50 { background-color: rgba(0, 0, 0, 0.5); }
+/* Cyberpunk Neon Backgrounds */
+.bg-white { background-color: #1a1a2e; }
+.bg-gray-50 { background-color: #0a0e27; }
+.bg-gray-100 { background-color: #131829; }
+.bg-amber-100 { background-color: rgba(255, 0, 128, 0.1); }
+.bg-amber-200 { background-color: rgba(57, 255, 20, 0.15); }
+.bg-accent { background-color: transparent; border: 2px solid #00d9ff; }
+.bg-marked { background-color: rgba(57, 255, 20, 0.3); }
+.bg-black\/50 { background-color: rgba(0, 0, 0, 0.9); }
 
-.text-white { color: #ffffff; }
-.text-gray-500 { color: #6b7280; }
-.text-gray-600 { color: #4b5563; }
-.text-gray-700 { color: #374151; }
-.text-gray-800 { color: #1f2937; }
-.text-gray-900 { color: #111827; }
-.text-green-600 { color: #16a34a; }
-.text-green-800 { color: #166534; }
-.text-amber-500 { color: #f59e0b; }
-.text-amber-800 { color: #92400e; }
-.text-amber-900 { color: #78350f; }
+/* Cyberpunk Neon Text Colors */
+.text-white { color: #e0e0e0; }
+.text-gray-500 { color: #00d9ff; }
+.text-gray-600 { color: #00d9ff; }
+.text-gray-700 { color: #e0e0e0; }
+.text-gray-800 { color: #ffffff; }
+.text-gray-900 { color: #ffffff; }
+.text-green-600 { color: #39ff14; }
+.text-green-800 { color: #39ff14; }
+.text-amber-500 { color: #ff0080; }
+.text-amber-800 { color: #ff0080; }
+.text-amber-900 { color: #ff0080; }
 
 .text-xs { font-size: 0.75rem; line-height: 1rem; }
 .text-sm { font-size: 0.875rem; line-height: 1.25rem; }
@@ -84,19 +99,21 @@ body {
 .text-center { text-align: center; }
 .text-left { text-align: left; }
 
-.border { border-width: 1px; }
-.border-b { border-bottom-width: 1px; }
-.border-gray-200 { border-color: #e5e7eb; }
-.border-gray-300 { border-color: #d1d5db; }
-.border-amber-400 { border-color: #fbbf24; }
-.border-marked-border { border-color: #22c55e; }
+/* Cyberpunk Neon Borders */
+.border { border-width: 2px; border-color: #00d9ff; }
+.border-b { border-bottom-width: 2px; border-bottom-color: #00d9ff; }
+.border-gray-200 { border-color: #00d9ff; }
+.border-gray-300 { border-color: #ff0080; }
+.border-amber-400 { border-color: #39ff14; }
+.border-marked-border { border-color: #39ff14; }
 
 .rounded { border-radius: 0.25rem; }
 .rounded-lg { border-radius: 0.5rem; }
 .rounded-xl { border-radius: 0.75rem; }
 
-.shadow-sm { box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); }
-.shadow-xl { box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); }
+/* Cyberpunk Neon Shadows & Glows */
+.shadow-sm { box-shadow: 0 0 10px rgba(0, 217, 255, 0.5); }
+.shadow-xl { box-shadow: 0 0 30px rgba(0, 217, 255, 0.6), 0 0 60px rgba(255, 0, 128, 0.3); }
 
 .space-y-2 > * + * { margin-top: 0.5rem; }
 
@@ -117,8 +134,13 @@ body {
 .transition-colors { transition-property: color, background-color, border-color; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 150ms; }
 .duration-150 { transition-duration: 150ms; }
 
-button:active .active\:bg-gray-100 { background-color: #f3f4f6; }
-button:active .active\:bg-accent-light { background-color: #3b82f6; }
+/* Cyberpunk Button States */
+button:active .active\:bg-gray-100 { background-color: rgba(0, 217, 255, 0.2); }
+button:active .active\:bg-accent-light { background-color: rgba(255, 0, 128, 0.2); }
+
+button:hover {
+    box-shadow: 0 0 15px rgba(0, 217, 255, 0.6);
+}
 
 button {
     cursor: pointer;
@@ -147,17 +169,461 @@ button:disabled {
     min-height: 60px;
 }
 
-@keyframes bounce {
+/* ========== CYBERPUNK COMPONENT STYLES ========== */
+
+/* Board Container - Neon Cyan Border with Glow */
+[class*="grid-cols-5"] {
+    border: 3px double #00d9ff;
+    padding: 1rem;
+    box-shadow: 
+        0 0 20px #00d9ff,
+        inset 0 0 20px rgba(0, 217, 255, 0.1);
+    background-color: #0f1535;
+}
+
+/* Board Squares - Dynamic Coloring */
+.rounded-lg {
+    transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    border: 2px solid #00d9ff;
+}
+
+/* Marked Squares - Lime Green with Glow */
+.bg-marked {
+    background-color: rgba(57, 255, 20, 0.4) !important;
+    border-color: #39ff14 !important;
+    box-shadow: 
+        0 0 15px #39ff14,
+        inset 0 0 10px rgba(57, 255, 20, 0.3);
+    color: #39ff14 !important;
+    text-shadow: 0 0 10px #39ff14;
+}
+
+/* Free Space (Center) - Cyan Highlight */
+.text-center.text-gray-500 {
+    color: #00d9ff !important;
+    background: rgba(0, 217, 255, 0.1);
+    border-color: #00d9ff !important;
+    box-shadow: 0 0 15px rgba(0, 217, 255, 0.5);
+}
+
+/* Winning Line Effect - Magenta Pulse */
+.bg-amber-200 {
+    background-color: rgba(255, 0, 128, 0.4) !important;
+    border-color: #ff0080 !important;
+    box-shadow: 
+        0 0 20px #ff0080,
+        inset 0 0 15px rgba(255, 0, 128, 0.3);
+    animation: glow-pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Modal - Double Border with Glow */
+.fixed.inset-0.z-50 > div {
+    border: 3px double #ff0080;
+    box-shadow: 
+        0 0 30px #ff0080,
+        0 0 60px rgba(255, 0, 128, 0.4),
+        inset 0 0 20px rgba(255, 0, 128, 0.1);
+    background-color: #0a0e27;
+}
+
+/* Modal Animation - Glitch Effect */
+.animate-\[bounce_0\.5s_ease-out\] {
+    animation: glitch 0.5s ease-out;
+}
+
+/* Header - Cyan Bottom Border */
+[class*="border-b"] {
+    border-bottom: 2px solid #00d9ff;
+    box-shadow: inset 0 -5px 15px rgba(0, 217, 255, 0.2);
+}
+
+/* Button Styling - Cyberpunk */
+button.bg-accent {
+    border: 2px solid #00d9ff;
+    color: #00d9ff;
+    text-shadow: 0 0 5px #00d9ff;
+    background: transparent;
+    transition: all 150ms ease-out;
+}
+
+button.bg-accent:hover {
+    background: rgba(0, 217, 255, 0.1);
+    box-shadow: 0 0 20px #00d9ff;
+}
+
+button.bg-accent:active {
+    background: rgba(0, 217, 255, 0.2);
+    box-shadow: 0 0 30px #00d9ff;
+}
+
+/* Text Transformations - Uppercase for Cyberpunk */
+.font-bold,
+.font-semibold {
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Accent Text - Magenta Glow */
+.text-amber-500,
+.text-amber-800,
+.text-amber-900 {
+    color: #ff0080 !important;
+    text-shadow: 0 0 10px #ff0080;
+}
+
+/* Success/Check Text - Lime Glow */
+.text-green-600,
+.text-green-800 {
+    color: #39ff14 !important;
+    text-shadow: 0 0 10px #39ff14;
+}
+
+/* Default Text - Slightly Enhanced */
+h1, h2, h3, h4, h5, h6 {
+    text-shadow: 0 0 5px rgba(0, 217, 255, 0.3);
+}
+
+/* Focus States - Cyan Glow */
+button:focus,
+input:focus {
+    outline: none;
+    box-shadow: 0 0 20px #00d9ff;
+}
+
+/* Cyberpunk Animations */
+
+@keyframes glitch {
+    0% {
+        transform: translate(0);
+    }
+    20% {
+        transform: translate(-3px, 3px);
+    }
+    40% {
+        transform: translate(-3px, -3px);
+    }
+    60% {
+        transform: translate(3px, 3px);
+    }
+    80% {
+        transform: translate(3px, -3px);
+    }
+    100% {
+        transform: translate(0);
+    }
+}
+
+@keyframes glow-pulse {
     0%, 100% {
-        transform: translateY(-25%);
-        animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+        text-shadow: 0 0 10px #00d9ff, 0 0 20px #00d9ff;
+        box-shadow: 0 0 10px #00d9ff, 0 0 20px #00d9ff, inset 0 0 10px #00d9ff;
     }
     50% {
+        text-shadow: 0 0 20px #00d9ff, 0 0 40px #00d9ff;
+        box-shadow: 0 0 20px #00d9ff, 0 0 40px #00d9ff, inset 0 0 20px #00d9ff;
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
         transform: translateY(0);
-        animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes scan-line {
+    0% {
+        top: -100%;
+    }
+    100% {
+        top: 100%;
+    }
+}
+
+/* Start Screen Landing Page Animations */
+
+@keyframes title-slide-in {
+    0% {
+        transform: translateX(-50px);
+        opacity: 0;
+        text-shadow: 0 0 0px #ff0080;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+        text-shadow: 0 0 20px #ff0080, 0 0 40px #ff0080;
+    }
+}
+
+@keyframes subtitle-fade-in {
+    0% {
+        opacity: 0;
+        color: #00d9ff;
+    }
+    100% {
+        opacity: 1;
+        color: #ff0080;
+    }
+}
+
+@keyframes card-slide-up {
+    0% {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes button-glow-in {
+    0% {
+        transform: translateY(20px) scale(0.95);
+        opacity: 0;
+        box-shadow: 0 0 0px #00d9ff;
+    }
+    100% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+        box-shadow: 0 0 20px #00d9ff;
     }
 }
 
 .animate-\[bounce_0\.5s_ease-out\] {
-    animation: bounce 0.5s ease-out;
+    animation: glitch 0.5s ease-out;
+}
+
+/* Start screen animation classes */
+.animate-title-enter {
+    animation: title-slide-in 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.animate-subtitle-enter {
+    animation: subtitle-fade-in 0.6s ease-out 0.4s both;
+}
+
+.animate-card-enter {
+    animation: card-slide-up 0.5s ease-out both;
+}
+
+.animate-card-1 { animation-delay: 0.6s; }
+.animate-card-2 { animation-delay: 0.75s; }
+.animate-card-3 { animation-delay: 0.9s; }
+
+.animate-button-enter {
+    animation: button-glow-in 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 1.1s both;
+}
+
+.glow-cyan {
+    text-shadow: 0 0 10px #00d9ff, 0 0 20px #00d9ff;
+    color: #00d9ff;
+}
+
+.glow-magenta {
+    text-shadow: 0 0 10px #ff0080, 0 0 20px #ff0080;
+    color: #ff0080;
+}
+
+.glow-lime {
+    text-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14;
+    color: #39ff14;
+}
+
+/* ========== START SCREEN LANDING PAGE ========== */
+
+.landing-container {
+    background: linear-gradient(135deg, rgba(10, 14, 39, 0.9) 0%, rgba(20, 20, 50, 0.7) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.landing-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 2px,
+            rgba(0, 217, 255, 0.03) 2px,
+            rgba(0, 217, 255, 0.03) 4px
+        );
+    pointer-events: none;
+    animation: scan-line 8s linear infinite;
+    z-index: 0;
+}
+
+.landing-content {
+    position: relative;
+    z-index: 1;
+}
+
+.landing-hero {
+    margin-bottom: 3rem;
+}
+
+.landing-title {
+    color: #ffffff;
+    text-transform: uppercase;
+    font-size: 3.5rem;
+    font-weight: 900;
+    letter-spacing: 0.1em;
+    line-height: 1;
+    text-shadow: 0 0 30px #ff0080, 0 0 60px #ff0080;
+}
+
+.landing-subtitle {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    margin-top: 1rem;
+    background: linear-gradient(90deg, #00d9ff 0%, #ff0080 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: none;
+}
+
+.benefit-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.benefit-card {
+    background-color: rgba(26, 26, 46, 0.6);
+    border: 2px solid #00d9ff;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    text-align: center;
+    transition: all 200ms ease-out;
+    box-shadow: 0 0 15px rgba(0, 217, 255, 0.3);
+}
+
+.benefit-card:hover {
+    background-color: rgba(26, 26, 46, 0.9);
+    border-color: #00d9ff;
+    box-shadow: 0 0 25px rgba(0, 217, 255, 0.6), inset 0 0 15px rgba(0, 217, 255, 0.1);
+    transform: translateY(-5px);
+}
+
+.benefit-card .benefit-emoji {
+    font-size: 2.5rem;
+    margin-bottom: 0.75rem;
+    display: block;
+    filter: drop-shadow(0 0 10px rgba(0, 217, 255, 0.5));
+}
+
+.benefit-card h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+    color: #e0e0e0;
+}
+
+.benefit-card:nth-child(1) h3 {
+    color: #00d9ff;
+    text-shadow: 0 0 10px #00d9ff;
+}
+
+.benefit-card:nth-child(2) h3 {
+    color: #ff0080;
+    text-shadow: 0 0 10px #ff0080;
+}
+
+.benefit-card:nth-child(3) h3 {
+    color: #39ff14;
+    text-shadow: 0 0 10px #39ff14;
+}
+
+.benefit-card p {
+    font-size: 0.875rem;
+    color: #b0b0b0;
+    line-height: 1.4;
+}
+
+.landing-cta {
+    margin-top: 2.5rem;
+    text-align: center;
+}
+
+.landing-tagline {
+    font-size: 0.875rem;
+    color: #7a7a9e;
+    margin-bottom: 1rem;
+    font-style: italic;
+    letter-spacing: 0.05em;
+}
+
+.landing-button-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.landing-social-proof {
+    font-size: 0.75rem;
+    color: #5a7a9e;
+    margin-top: 1rem;
+}
+
+.landing-button {
+    position: relative;
+    padding: 1rem 2.5rem;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #00d9ff;
+    background: transparent;
+    border: 2px solid #00d9ff;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 150ms ease-out;
+    box-shadow: 0 0 20px #00d9ff;
+}
+
+.landing-button:hover {
+    background: rgba(0, 217, 255, 0.1);
+    border-color: #ff0080;
+    color: #ff0080;
+    box-shadow: 
+        0 0 20px #00d9ff,
+        0 0 30px #ff0080,
+        inset 0 0 20px rgba(255, 0, 128, 0.1);
+}
+
+.landing-button:active {
+    background: rgba(255, 0, 128, 0.2);
+    box-shadow: 
+        0 0 30px #00d9ff,
+        0 0 40px #ff0080,
+        inset 0 0 25px rgba(255, 0, 128, 0.2);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .landing-title {
+        font-size: 2.5rem;
+    }
+    
+    .landing-subtitle {
+        font-size: 1.125rem;
+    }
+    
+    .benefit-cards {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
 }
